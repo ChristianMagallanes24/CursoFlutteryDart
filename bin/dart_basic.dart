@@ -110,8 +110,17 @@ Calcular cuánto debe pagar cada persona.
 Mostrar el resultado en pantalla.
 */
 
-
-
-
+// Pedir al usuario el total de la cuenta.
+int totalCuenta = 1500;
+// Pedir el porcentaje de propina a agregar.
+int propina = 350;
+// Calcular el total a pagar sumando la propina.
+int resultado = totalCuenta + propina;
+// Pedir el número de personas para dividir la cuenta.
+double cantPersonas = 3;
+// Calcular cuánto debe pagar cada persona.
+int totalApagar = resultado ~/ cantPersonas;
+// Mostrar el resultado en pantalla.
+print("el total a pagar es de $totalApagar");
 
 }
