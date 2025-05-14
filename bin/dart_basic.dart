@@ -187,4 +187,99 @@ Mostrar el resultado en pantalla.
   ESCRIBE UN PROGRAMA EN DART QUE RECIBA UN NUMERO ENTRE 1 Y 12
   E IMPRIMA EL NOMBRE DEL MES CORRESPONDIENE AL ANIO
   */
+  // FUNCIONES
+  //   print("El resultado es ${sumar()}");
+  // }
+
+  // int sumar() {
+  //   int a = 4;
+  //   int c = 6;
+  //   int resultado = a + c;
+  //   return resultado;
+  // }
+
+  // int otraFuncion(int a, int b) {
+  //   return a + b;
+  // ejemploLista();
+  // miSet();
+  // miMap();
+  // setBucle();
+  listBucle();
+  mapBucle();
+}
+
+// LISTAS
+
+// void ejemploLista() {
+// List<String> nombres = ["Jose", "Pedro", "Christian"];
+// List<String> nombres2 = ["Xd", "La wea"];
+// var nombres2 = ["Ppeee", "Pedro"];
+// print(nombres[1]); // Accede al elemento indicado por indice
+// print(nombres.last); // Muestra el ultimo elemento
+// print(nombres.first);  // muestra el primer elemento
+// print(nombres.length); // muestra la cantidad delementos
+// print(nombres[nombres.length - 1]); // siempre te muestra el ultimo elemento
+// nombres[0] = "Tiago"; // Remplazo el valor por otro primero indicando el indice
+// nombres.add("Roblox"); // Agrega otro valor al final
+// nombres.addAll(nombres2); // Agrega todos los elementos de otra lista
+// nombres.remove("Jose"); // Remueve un valor pero el primero q encuentre
+// nombres.removeAt(0); Remueve el valor por indice
+// nombres.clear(); // Elimina todos los valores
+// nombres.insert(1, "Leche"); // Agregar un valor donde quieramos mediante el indice
+// print(nombres);
+// }
+
+// // SETS
+// void miSet() {
+//   Set<String> juegos = {"Roblox", "Minecraft"};
+//   juegos.add("GTA 5");
+//   // bool resultado = juegos.contains("GTA 5"); // para saber si se encuentra dicho elemento devuelve true o false
+//   print(juegos);
+//   // print(resultado);
+// }
+
+// MAP
+// Clave, Valor
+// void miMap() {
+//   Map<String, int> personas = {"Christian": 32, "Alejandro": 50, "Yamila": 14};
+//   personas["Christian"] = 25; // Cambiar el valor
+//   personas["Roberto"] = 35; // Cambiar el valor o agregar uno nuevo
+//   personas.addAll({"David": 22, "Miguel": 55}); // Agregar Clave y valor
+//   print(personas["Christian"]); // Para saber el valor
+//   personas.remove("Christian"); // Eliminar
+//   print(personas);
+//   print(personas.keys); // ver todas las claves
+//   print(personas.values); // ver todas los valores
+//   print(personas.containsKey("Miguel")); // Para saber si existe
+//   print(personas.containsValue(50)); // Para saber si existe
+// }
+
+void listBucle() {
+  List<int> numeros = [1, 2, 3, 4, 5, 25];
+
+  for (var i = 0; i < numeros.length; i++) {
+    print("El elmento es: ${numeros[i]}");
+  }
+
+  for (var numero in numeros) {
+    print("Esto es un for in $numero");
+  }
+  numeros.forEach((item) {
+    print("El numero es $item");
+  });
+}
+
+// void setBucle() {
+//   Set<int> numeros2 = {1, 2, 3, 4, 5, 6, 7};
+// }
+
+void mapBucle() {
+  Map<String, int> numeros3 = {"Christian": 25, "David": 23, "Jose": 30};
+
+  for (var elemento in numeros3.entries) {
+    print("La clave es ${elemento.key} y el valor es ${elemento.value}");
+  }
+  numeros3.forEach((nombre, edad) {
+    print("El nombre es $nombre y la edad es $edad");
+  });
 }
