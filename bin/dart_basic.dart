@@ -1,6 +1,12 @@
 import 'dart:io';
 
 void main(List<String> arguments) {
+  coountRepeats();
+  // filtrar();
+  // sumaLista();
+  // positivoNegativo();
+  // numMes();
+  // calcularEdad();
   // const nombre = 'hola jose';
   // print(nombre);
 
@@ -284,18 +290,11 @@ Mostrar el resultado en pantalla.
 //   });
 // }
 
-
-
-
-
-
 /*
 +-------------------------------------+
 |           EJERCICIOS                |
 +-------------------------------------+
 */
-
-
 
 /*
     📌 EJERCICIO 1: CALCULADORA DE EDAD
@@ -311,9 +310,15 @@ Mostrar el resultado en pantalla.
     4️⃣ Mostrar el resultado en un mensaje como: "Tienes X años."
   */
 
+// void calcularEdad() {
+//   int fechaActual = 2025;
+//   print("Introduce tu chea de nacimiento: ");
+//   int fechaDeNacimiento = int.parse(stdin.readLineSync()!);
+//   int edad = fechaActual - fechaDeNacimiento;
+//   print("Tu tienes $edad de anios!");
+// }
 
-
-   /*
+/*
     📌 EJERCICIO 2: CALCULADORA DE PROPINA
 
     ✅ Objetivo:
@@ -329,10 +334,7 @@ Mostrar el resultado en pantalla.
     6️⃣ Mostrar el resultado en pantalla.
   */
 
-
-
-
-    /*
+/*
     📌 EJERCICIO 3: IDENTIFICAR NÚMEROS POSITIVOS Y NEGATIVOS
 
     ✅ Objetivo:
@@ -340,10 +342,21 @@ Mostrar el resultado en pantalla.
     por el usuario es positivo, negativo o cero.
   */
 
+// void positivoNegativo() {
+//   print("Ingresa un numero: ");
+//   int numero = int.parse(stdin.readLineSync()!);
+//   if (numero < 0) {
+//     print("Tu numero es negativo");
+//   } else if (numero > 0) {
+//     print("Tu numero es positivo");
+//   } else if (numero == 0) {
+//     print("Tu numero es neutro");
+//   } else {
+//     print("Error");
+//   }
+// }
 
-
-
-  /*
+/*
     📌 EJERCICIO 4: MESES DEL AÑO
 
     ✅ Objetivo:
@@ -351,9 +364,53 @@ Mostrar el resultado en pantalla.
     e imprima el nombre del mes correspondiente del año.
   */
 
+// void numMes() {
+//   print("Ingrese el numero del mes");
+//   int num = int.parse(stdin.readLineSync()!);
+//   switch (num) {
+//     case 1:
+//       print("Es Enero");
+//       break;
+//     case 2:
+//       print("Es Febrero");
+//       break;
+//     case 3:
+//       print("Es Marzo");
+//       break;
+//     case 4:
+//       print("Es Febrero");
+//       break;
+//     case 5:
+//       print("Es Febrero");
+//       break;
+//     case 6:
+//       print("Es Febrero");
+//       break;
+//     case 7:
+//       print("Es Febrero");
+//       break;
+//     case 8:
+//       print("Es Febrero");
+//       break;
+//     case 9:
+//       print("Es Febrero");
+//       break;
+//     case 10:
+//       print("Es Febrero");
+//       break;
+//     case 11:
+//       print("Es Febrero");
+//       break;
+//     case 12:
+//       print("Es Febrero");
+//       break;
+//     default:
+//       print("Error");
+//       break;
+//   }
+// }
 
-
-    /*
+/*
     📌 EJERCICIO 5: SUMA DE NÚMEROS PARES EN UNA LISTA
 
     ✅ Objetivo:
@@ -367,9 +424,20 @@ Mostrar el resultado en pantalla.
     TIP Si a un número le hacemos %2 == 0 es par.
   */
 
+List<int> lista = [1, 2, 3, 4, 5, 6]; // Lista de numeros
+void sumaLista() {
+  int total = 0;
+  // Funcion para sumar los numeros de la lista
+  for (var numero in lista) {
+    if ((numero) % 2 == 0) {
+      print("$numero es par");
+      total = total + numero;
+    }
+  }
+  print("El total de la suma de los numeros es de $total");
+}
 
-
-    /*
+/*
     📌 EJERCICIO 6: FILTRAR PALABRAS ÚNICAS EN UN SET
 
     ✅ Objetivo:
@@ -381,8 +449,23 @@ Mostrar el resultado en pantalla.
     Entrada: ["dart", "flutter", "dart", "codigo", "flutter", "movil"]
     Salida: {dart, flutter, codigo, movil}
 */
-
-
+List<String> lista2 = [
+  "dart",
+  "flutter",
+  "dart",
+  "codigo",
+  "flutter",
+  "movil",
+]; // lista
+Set<String> lista3 = {};
+void filtrar() {
+  for (var elemento in lista2) {
+    print(elemento);
+    lista3.add(elemento);
+  }
+  print(lista2);
+  print(lista3);
+}
 
 /*
     📌 EJERCICIO 7: CONTAR LA FRECUENCIA DE PALABRAS EN UN MAP
@@ -395,3 +478,21 @@ Mostrar el resultado en pantalla.
     Entrada: ["dart", "flutter", "dart", "codigo", "flutter", "movil", "dart"]
     Salida: {dart: 3, flutter: 2, codigo: 1, movil: 1}
 */
+
+List<String> miLista = [
+  "dart",
+  "flutter",
+  "dart",
+  "codigo",
+  "flutter",
+  "movil",
+  "dart",
+];
+int contador = 0;
+void coountRepeats() {
+  for (var elemento in miLista) {
+    if (elemento == elemento) {
+      contador++;
+    }
+  }
+}
