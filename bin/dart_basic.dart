@@ -1,7 +1,14 @@
 import 'dart:io';
 
+import 'package:dart_basic/player1.dart';
+
 void main(List<String> arguments) {
-  coountRepeats();
+  invitado();
+  // var jugador1 = Jugador();
+  // jugador1.poder = 25;
+  // jugador1.pegar();
+
+  // coountRepeats();
   // filtrar();
   // sumaLista();
   // positivoNegativo();
@@ -431,7 +438,7 @@ void sumaLista() {
   for (var numero in lista) {
     if ((numero) % 2 == 0) {
       print("$numero es par");
-      total = total + numero;
+      total += numero;
     }
   }
   print("El total de la suma de los numeros es de $total");
@@ -484,15 +491,79 @@ List<String> miLista = [
   "flutter",
   "dart",
   "codigo",
+  "flutter", //2
+  "movil",
+  "dart", // 3
+]; // Lista
+
+Map<String, int> salida = {}; // Mapa para guardar
+
+int contador = 0;
+List<String> repetidos = [];
+void coountRepeats() {
+  for (var valor in miLista) {
+    if (salida.containsKey(valor)) {
+      salida[valor] = salida[valor]! + 1;
+    } else {
+      salida[valor] = 1;
+    }
+  }
+  print(salida);
+}
+
+/*
+/* Lista de palabras. Algunas se repiten (por ejemplo: "dart" aparece 3 veces) */
+List<String> miLista = [
+  "dart",
+  "flutter",
+  "dart",
+  "codigo",
   "flutter",
   "movil",
   "dart",
 ];
-int contador = 0;
-void coountRepeats() {
-  for (var elemento in miLista) {
-    if (elemento == elemento) {
-      contador++;
+
+/* Mapa vacío para guardar cuántas veces aparece cada palabra.
+   La clave será una palabra (String) y el valor su cantidad (int) */
+Map<String, int> salida = {};
+
+/* Función que cuenta cuántas veces se repite cada palabra en la lista */
+void countRepeats() {
+  /* Recorremos cada palabra (valor) de la lista */
+  for (var valor in miLista) {
+    /* Verificamos si esa palabra ya existe como clave en el mapa */
+    if (salida.containsKey(valor)) {
+      /* Si ya existe, sumamos 1 al valor actual (ya había sido contada antes) */
+      salida[valor] = salida[valor]! + 1;
+    } else {
+      /* Si no existe, significa que es la primera vez que aparece.
+         La agregamos al mapa con el valor 1 */
+      salida[valor] = 1;
     }
   }
+}
+
+/* Función principal que se ejecuta al correr el programa */
+void main() {
+  /* Llamamos a la función que cuenta las repeticiones */
+  countRepeats();
+
+  /* Mostramos el resultado final: un mapa con las palabras y sus cantidades */
+  print(salida); // Salida esperada: {dart: 3, flutter: 2, codigo: 1, movil: 1}
+}
+*/
+
+void invitado() {
+  String? usuario = "pepe";
+
+  /* Simulamos que el usuario no tiene nombre */
+  usuario = ""; // Prueba cambiar este valor para testear
+
+  /* Si es null o está vacío, asignamos "Invitado" */
+  if (usuario == null || usuario.trim().isEmpty) {
+    usuario = "Invitado";
+  }
+
+  /* Mostramos el mensaje */
+  print("Hola, $usuario 👋");
 }
